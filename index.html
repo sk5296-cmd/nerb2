@@ -164,6 +164,63 @@
     color: var(--muted);
   }
 
+  /* Gallery pages: hidden until chosen from the menu */
+  .page, .page:target ~ #home { display: none; }
+  .page:target { display: block; }
+  .page, #home { flex: 1; }
+
+  .page header { padding: 48px 0 44px; }
+  .page h1 { font-size: clamp(2rem, 5.5vw, 3.3rem); }
+
+  .back {
+    display: inline-block;
+    margin-bottom: 26px;
+    color: #ddd5c4;
+    font-size: 0.95rem;
+    text-underline-offset: 4px;
+  }
+
+  .text { max-width: 680px; margin: 0 auto; padding: 56px 0 0; }
+  .text h2 { font-size: 1.6rem; font-weight: normal; margin: 48px 0 14px; }
+  .text p + p { margin-top: 16px; }
+  .opening { font-size: 1.35rem; line-height: 1.55; text-align: center; }
+
+  .pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-top: 48px;
+  }
+
+  .panel {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--accent);
+    padding: 28px 28px 30px;
+  }
+
+  .panel h2 { font-size: 1.5rem; font-weight: normal; line-height: 1.35; margin: 8px 0 14px; }
+
+  blockquote {
+    border-left: 2px solid var(--accent);
+    padding-left: 16px;
+    margin: 18px 0 0;
+    font-style: italic;
+  }
+
+  blockquote cite { display: block; font-style: normal; font-size: 0.85rem; color: var(--muted); margin-top: 6px; }
+
+  .meaning { list-style: none; margin-top: 20px; }
+  .meaning li { border-top: 1px solid var(--line); padding: 20px 0; }
+  .meaning strong { display: block; font-size: 1.15rem; color: var(--accent); font-weight: normal; }
+
+  .bottom { text-align: center; padding: 40px 0 72px; }
+  .bottom a { color: var(--accent); text-underline-offset: 4px; }
+
+  @media (max-width: 680px) {
+    .pair { grid-template-columns: 1fr; }
+  }
+
   @media (max-width: 780px) {
     nav ul { grid-template-columns: repeat(2, 1fr); }
   }
@@ -180,6 +237,60 @@
 </style>
 </head>
 <body>
+
+<article class="page" id="comparison-breaks">
+
+  <header>
+    <div class="wrap">
+      <a class="back" href="#home">&larr; Back to the exhibit entrance</a>
+      <p class="kicker">Gallery IV</p>
+      <h1>Where the Comparison Breaks</h1>
+      <p class="subtitle">A miracle and a covenant. Human politics and a constitution.</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <div class="text">
+      <p class="opening">Both stories lead people toward freedom. They differ in who makes that freedom happen, and in what holds the people together afterward.</p>
+    </div>
+
+    <div class="pair">
+      <section class="panel">
+        <p class="number">The Exodus</p>
+        <h2>A miracle that leads to a covenant</h2>
+        <p>In the book of Exodus, God is the one who frees the Israelites. He sends the plagues and parts the sea. Moses leads, but the power is not his. The road leads to Mount Sinai, where the people receive God&rsquo;s law and agree to a covenant, a sacred and binding promise between them and God.</p>
+        <blockquote>&ldquo;All that the Lord hath spoken we will do.&rdquo;<cite>Exodus 19:8, King James Version</cite></blockquote>
+      </section>
+
+      <section class="panel">
+        <p class="number">The Revolution</p>
+        <h2>Human politics that leads to a constitution</h2>
+        <p>The Revolution was argued, voted on and fought by people. Congress debated, soldiers enlisted or went home, and generals made choices, some of them badly mistaken. The road led to the Constitution, written in 1787 and ratified in 1788, an agreement among people about how to govern themselves.</p>
+        <blockquote>&ldquo;We the People of the United States&hellip;&rdquo;<cite>Preamble to the Constitution</cite></blockquote>
+      </section>
+    </div>
+
+    <div class="text">
+      <h2>What the difference means</h2>
+      <ul class="meaning">
+        <li><strong>Where authority comes from</strong>At Sinai, the law has authority because God gives it. The people accept it, but they do not write it. The Constitution claims its authority from the people themselves.</li>
+        <li><strong>Whether the rules can change</strong>A covenant&rsquo;s commandments may be studied and interpreted, but they are not repealed by vote. The Constitution includes a way to amend it, because its authors expected that it might need correction.</li>
+        <li><strong>What freedom is for</strong>In Exodus, the Israelites are freed in order to serve God. Freedom comes with a calling. In the American story, independence lets people govern themselves and pursue their own goals within the law.</li>
+        <li><strong>Who is responsible</strong>A miracle asks people to trust and remember. Politics asks them to persuade, compromise and answer for the results.</li>
+      </ul>
+
+      <h2>A fair objection</h2>
+      <p>The line is not perfectly sharp. Washington and many others spoke of Providence, meaning God&rsquo;s care, and some saw it in lucky weather, such as the fog that helped the army escape from Brooklyn in August 1776. The Israelites also had to act: they had to leave, walk and agree.</p>
+      <p>Still, the two kinds of story are different. Exodus presents God&rsquo;s action as the center of events. McCullough&rsquo;s <cite>1776</cite> explains events mainly through people, their choices, their courage and their luck. The book ends in early 1777, so the Constitution lies beyond its pages, in the later history of the Revolution.</p>
+    </div>
+
+    <p class="bottom"><a href="#home">&larr; Back to the exhibit entrance</a></p>
+
+  </div>
+</article>
+
+<div id="home">
 
 <header>
   <div class="wrap">
@@ -222,7 +333,7 @@
         </a>
       </li>
       <li>
-        <a href="comparison-breaks.html">
+        <a href="#comparison-breaks">
           <span class="number">Gallery IV</span>
           <span class="name">Where the Comparison Breaks</span>
           <span class="desc">The important ways these two stories differ.</span>
@@ -246,6 +357,7 @@
   </nav>
 
 </main>
+</div>
 
 <footer>
   <div class="wrap">Two Roads to Freedom &middot; A school project</div>
