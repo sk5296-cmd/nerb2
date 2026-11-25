@@ -221,6 +221,45 @@
     .pair { grid-template-columns: 1fr; }
   }
 
+  /* Citations, verses, table and game */
+  .page:has(:target) { display: block; }
+  .page:has(:target) ~ #home { display: none; }
+  .panel p + p, .panel blockquote + p { margin-top: 16px; }
+  .text > h2:first-child { margin-top: 0; }
+  .panel blockquote + p { padding-top: 2px; }
+  .pair + .text { padding-top: 56px; }
+  .text + .pair { padding-top: 22px; }
+  .text:first-child + .text { padding-top: 56px; }
+  .cite { color: var(--accent); text-decoration: none; }
+  sup { line-height: 0; margin-left: 2px; }
+  blockquote cite a { color: inherit; }
+  cite.in { display: inline; font-style: italic; font-size: inherit; margin: 0; }
+  .he { display: block; font-style: normal; font-size: 1.2rem; line-height: 1.9; margin-bottom: 6px;
+        font-family: "SBL Hebrew", "Times New Roman", David, serif; }
+  .list { padding-left: 1.6em; margin-top: 14px; }
+  ul.list { list-style: none; padding-left: 0; }
+  .list li { padding: 12px 4px; border-bottom: 1px solid var(--line); scroll-margin-top: 20px; }
+  .list li:target { background: #efe3cf; }
+  .list a { color: var(--accent); }
+  .url { display: block; font-size: 0.85rem; overflow-wrap: anywhere; }
+  .table { max-width: 780px; margin: 0 auto; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); table-layout: fixed; }
+  th, td { border: 1px solid var(--line); padding: 12px; text-align: left; vertical-align: top; font-weight: normal; overflow-wrap: break-word; }
+  th { color: var(--accent); }
+  .q { background: var(--card); border: 1px solid var(--line); padding: 24px; margin-top: 20px; }
+  .q h2 { margin: 8px 0 16px; font-size: 1.3rem; }
+  .choices { display: grid; gap: 10px; }
+  button { font: inherit; color: var(--ink); background: var(--wall); border: 1px solid var(--line); padding: 10px 16px; cursor: pointer; text-align: left; }
+  button:hover:enabled { border-color: var(--accent); }
+  button:disabled { cursor: default; }
+  button.right { background: #dce8d5; border-color: #3f6b32; }
+  button.wrong { background: #f0d9d4; border-color: var(--accent); }
+  .answer { margin-top: 12px; }
+  #score { font-size: 1.4rem; text-align: center; margin: 32px 0 14px; }
+  .center { text-align: center; }
+  .bottom { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 32px; }
+  @media (max-width: 520px) { th, td { padding: 8px; font-size: 0.85rem; } }
+
   @media (max-width: 780px) {
     nav ul { grid-template-columns: repeat(2, 1fr); }
   }
@@ -238,55 +277,99 @@
 </head>
 <body>
 
-<article class="page" id="comparison-breaks">
-
-  <header>
-    <div class="wrap">
-      <a class="back" href="#home">&larr; Back to the exhibit entrance</a>
-      <p class="kicker">Gallery IV</p>
-      <h1>Where the Comparison Breaks</h1>
-      <p class="subtitle">A miracle and a covenant. Human politics and a constitution.</p>
-    </div>
-  </header>
-
+<article class="page" id="leaders">
+  <header><div class="wrap">
+    <a class="back" href="#home">&larr; Back to the exhibit entrance</a>
+    <p class="kicker">Gallery I</p>
+    <h1>The Leaders</h1>
+    <p class="subtitle">George Washington and Moses: great leaders who hesitated</p>
+  </div></header>
   <div class="wrap">
-
-    <div class="text">
-      <p class="opening">Both stories lead people toward freedom. They differ in who makes that freedom happen, and in what holds the people together afterward.</p>
-    </div>
-
-    <div class="pair">
-      <section class="panel">
-        <p class="number">The Exodus</p>
-        <h2>A miracle that leads to a covenant</h2>
-        <p>In the book of Exodus, God is the one who frees the Israelites. He sends the plagues and parts the sea. Moses leads, but the power is not his. The road leads to Mount Sinai, where the people receive God&rsquo;s law and agree to a covenant, a sacred and binding promise between them and God.</p>
-        <blockquote>&ldquo;All that the Lord hath spoken we will do.&rdquo;<cite>Exodus 19:8, King James Version</cite></blockquote>
-      </section>
-
-      <section class="panel">
-        <p class="number">The Revolution</p>
-        <h2>Human politics that leads to a constitution</h2>
-        <p>The Revolution was argued, voted on and fought by people. Congress debated, soldiers enlisted or went home, and generals made choices, some of them badly mistaken. The road led to the Constitution, written in 1787 and ratified in 1788, an agreement among people about how to govern themselves.</p>
-        <blockquote>&ldquo;We the People of the United States&hellip;&rdquo;<cite>Preamble to the Constitution</cite></blockquote>
-      </section>
-    </div>
-
-    <div class="text">
-      <h2>What the difference means</h2>
-      <ul class="meaning">
-        <li><strong>Where authority comes from</strong>At Sinai, the law has authority because God gives it. The people accept it, but they do not write it. The Constitution claims its authority from the people themselves.</li>
-        <li><strong>Whether the rules can change</strong>A covenant&rsquo;s commandments may be studied and interpreted, but they are not repealed by vote. The Constitution includes a way to amend it, because its authors expected that it might need correction.</li>
-        <li><strong>What freedom is for</strong>In Exodus, the Israelites are freed in order to serve God. Freedom comes with a calling. In the American story, independence lets people govern themselves and pursue their own goals within the law.</li>
-        <li><strong>Who is responsible</strong>A miracle asks people to trust and remember. Politics asks them to persuade, compromise and answer for the results.</li>
-      </ul>
-
-      <h2>A fair objection</h2>
-      <p>The line is not perfectly sharp. Washington and many others spoke of Providence, meaning God&rsquo;s care, and some saw it in lucky weather, such as the fog that helped the army escape from Brooklyn in August 1776. The Israelites also had to act: they had to leave, walk and agree.</p>
-      <p>Still, the two kinds of story are different. Exodus presents God&rsquo;s action as the center of events. McCullough&rsquo;s <cite>1776</cite> explains events mainly through people, their choices, their courage and their luck. The book ends in early 1777, so the Constitution lies beyond its pages, in the later history of the Revolution.</p>
-    </div>
-
-    <p class="bottom"><a href="#home">&larr; Back to the exhibit entrance</a></p>
-
+<div class="text"><p class="opening">Both men are remembered as great leaders. Neither began by claiming that he was the right man for the task.</p></div><div class="text"><h2>Reluctant to lead</h2></div><div class="pair"><section class="panel"><p class="number">Moses</p><h2>&ldquo;Who am I?&rdquo;</h2><p>At the burning bush, God sends Moses to Pharaoh. Moses questions his own worth, says he is not a good speaker and asks that someone else be sent.</p><blockquote><span class="he" lang="he" dir="rtl">וַיֹּאמֶר מֹשֶׁה, אֶל-הָאֱלֹהִים, מִי אָנֹכִי, כִּי אֵלֵךְ אֶל-פַּרְעֹה; וְכִי אוֹצִיא אֶת-בְּנֵי יִשְׂרָאֵל, מִמִּצְרָיִם.</span>And Moses said unto God: &lsquo;Who am I, that I should go unto Pharaoh, and that I should bring forth the children of Israel out of Egypt?&rsquo;<cite><a href="#v-ex3_11">Shemot (Exodus) 3:11</a></cite></blockquote><blockquote><span class="he" lang="he" dir="rtl">וַיֹּאמֶר מֹשֶׁה אֶל-יְהוָה, בִּי אֲדֹנָי, לֹא אִישׁ דְּבָרִים אָנֹכִי…</span>And Moses said unto the LORD: &lsquo;Oh Lord, I am not a man of words&hellip;&rsquo;<cite><a href="#v-ex4_10">Shemot (Exodus) 4:10</a></cite></blockquote><blockquote><span class="he" lang="he" dir="rtl">וַיֹּאמֶר, בִּי אֲדֹנָי; שְׁלַח-נָא, בְּיַד-תִּשְׁלָח.</span>And he said: &lsquo;Oh Lord, send, I pray Thee, by the hand of him whom Thou wilt send.&rsquo;<cite><a href="#v-ex4_13">Shemot (Exodus) 4:13</a></cite></blockquote></section><section class="panel"><p class="number">George Washington</p><h2>&ldquo;A trust too great&rdquo;</h2><p>In June 1775, Congress chose Washington to command the Continental Army. He told Congress that he doubted his ability, and he declined a salary, asking only to have his expenses repaid.</p><blockquote>&ldquo;I do not think my self equal to the Command I am honoured with.&rdquo;<cite>Address to Congress, June 16, 1775<sup><a class="cite" href="#src-address" aria-label="Source 3">[3]</a></sup></cite></blockquote><p>Two days later he wrote to his wife that the command was &ldquo;a trust too great for my Capacity.&rdquo;</p><blockquote>&ldquo;&hellip;so far from seeking this appointment I have used every endeavour in my power to avoid it.&rdquo;<cite>Letter to Martha Washington, June 18, 1775<sup><a class="cite" href="#src-martha" aria-label="Source 4">[4]</a></sup></cite></blockquote></section></div><div class="text"><h2>Great in leadership</h2></div><div class="pair"><section class="panel"><p class="number">Moses</p><h2>Humble, and willing to listen</h2><p>Moses leads the people out of Egypt and through the wilderness. When his father-in-law Yitro (Jethro) warns him that he cannot judge everyone alone, Moses listens and appoints others to help.</p><blockquote><span class="he" lang="he" dir="rtl">נָבֹל תִּבֹּל--גַּם-אַתָּה, גַּם-הָעָם הַזֶּה אֲשֶׁר עִמָּךְ: כִּי-כָבֵד מִמְּךָ הַדָּבָר, לֹא-תוּכַל עֲשֹׂהוּ לְבַדֶּךָ.</span>Thou wilt surely wear away, both thou, and this people that is with thee; for the thing is too heavy for thee; thou art not able to perform it thyself alone.<cite><a href="#v-ex18_18">Shemot (Exodus) 18:18</a></cite></blockquote><blockquote><span class="he" lang="he" dir="rtl">וְהָאִישׁ מֹשֶׁה, עָנָו מְאֹד--מִכֹּל, הָאָדָם, אֲשֶׁר, עַל-פְּנֵי הָאֲדָמָה.</span>Now the man Moses was very meek, above all the men that were upon the face of the earth.<cite><a href="#v-nu12_3">Bamidbar (Numbers) 12:3</a></cite></blockquote><blockquote><span class="he" lang="he" dir="rtl">וְלֹא-קָם נָבִיא עוֹד בְּיִשְׂרָאֵל, כְּמֹשֶׁה, אֲשֶׁר יְדָעוֹ יְהוָה, פָּנִים אֶל-פָּנִים.</span>And there hath not arisen a prophet since in Israel like unto Moses, whom the LORD knew face to face;<cite><a href="#v-dt34_10">Devarim (Deuteronomy) 34:10</a></cite></blockquote></section><section class="panel"><p class="number">George Washington</p><h2>Steady, and willing to give up power</h2><p>Washington led the army from 1775 to 1783. He lost many battles, yet he chose generals, worked with Congress and the states and kept the cause alive.<sup><a class="cite" href="#src-army" aria-label="Source 11">[11]</a></sup></p><p>On December 23, 1783, he returned his commission to Congress and went home. People admired him for giving up military power.<sup><a class="cite" href="#src-resign" aria-label="Source 12">[12]</a></sup></p></section></div><div class="text"><h2>An important difference</h2><p>Both men doubted themselves, but their hesitation looked different. Moses raised objections to God more than once, and was given his brother Aaron to speak with him (Shemot 4:14&ndash;16). Washington expressed his doubts but accepted the post. Moses was called by God. Washington was chosen by a vote of people in Congress.<sup><a class="cite" href="#src-address" aria-label="Source 3">[3]</a></sup></p></div>
+    <p class="bottom"><a href="#home">Exhibit entrance</a> <a href="#crossing">The Crossing &rarr;</a></p>
+  </div>
+</article>
+<article class="page" id="crossing">
+  <header><div class="wrap">
+    <a class="back" href="#home">&larr; Back to the exhibit entrance</a>
+    <p class="kicker">Gallery II</p>
+    <h1>The Crossing</h1>
+    <p class="subtitle">The Delaware River and the Red Sea</p>
+  </div></header>
+  <div class="wrap">
+<div class="text"><p class="opening">Each crossing happened with water in the way, an enemy to face and a night of hard weather. Each became a turning point that people still remember.</p></div><div class="pair"><section class="panel"><p class="number">The Exodus</p><h2>Through the sea</h2><p>The Israelites have left Egypt, and Pharaoh&rsquo;s army is chasing them. They are trapped at the sea and afraid. Moses tells them not to fear.</p><blockquote><span class="he" lang="he" dir="rtl">וַיֹּאמֶר מֹשֶׁה אֶל-הָעָם, אַל-תִּירָאוּ--הִתְיַצְּבוּ וּרְאוּ אֶת-יְשׁוּעַת יְהוָה…</span>And Moses said unto the people: &lsquo;Fear ye not, stand still, and see the salvation of the LORD&hellip;&rsquo;<cite><a href="#v-ex14_13">Shemot (Exodus) 14:13</a></cite></blockquote><blockquote><span class="he" lang="he" dir="rtl">וַיֵּט מֹשֶׁה אֶת-יָדוֹ, עַל-הַיָּם, וַיּוֹלֶךְ יְהוָה אֶת-הַיָּם בְּרוּחַ קָדִים עַזָּה כָּל-הַלַּיְלָה, וַיָּשֶׂם אֶת-הַיָּם לֶחָרָבָה; וַיִּבָּקְעוּ, הַמָּיִם.</span>And Moses stretched out his hand over the sea; and the LORD caused the sea to go back by a strong east wind all the night, and made the sea dry land, and the waters were divided.<cite><a href="#v-ex14_21">Shemot (Exodus) 14:21</a></cite></blockquote><blockquote><span class="he" lang="he" dir="rtl">וַיָּבֹאוּ בְנֵי-יִשְׂרָאֵל בְּתוֹךְ הַיָּם, בַּיַּבָּשָׁה; וְהַמַּיִם לָהֶם חוֹמָה, מִימִינָם וּמִשְּׂמֹאלָם.</span>And the children of Israel went into the midst of the sea upon the dry ground; and the waters were a wall unto them on their right hand, and on their left.<cite><a href="#v-ex14_22">Shemot (Exodus) 14:22</a></cite></blockquote><p>When the Egyptians follow, the waters return and cover them (Shemot 14:26&ndash;28). The Hebrew name of the sea, <i>Yam Suf</i>, is usually translated &ldquo;Red Sea,&rdquo; but it can also mean &ldquo;Sea of Reeds.&rdquo;<sup><a class="cite" href="#src-yam" aria-label="Source 10">[10]</a></sup></p></section><section class="panel"><p class="number">The Revolution</p><h2>Across the Delaware</h2><p>On Christmas night, 1776, Washington took about 2,400 soldiers across the icy Delaware River. Rain turned into a northeaster. The army used large cargo boats called Durham boats, and ferries carried horses and cannon. Henry Knox directed the crossing.<sup><a class="cite" href="#src-cross" aria-label="Source 13">[13]</a></sup><sup><a class="cite" href="#src-trenton" aria-label="Source 14">[14]</a></sup></p><p>The army ran about three hours late, and two other American forces failed to get across. Washington went on, marched to Trenton and attacked the Hessians, German soldiers fighting for Britain. Most of their garrison was captured.<sup><a class="cite" href="#src-cross" aria-label="Source 13">[13]</a></sup><sup><a class="cite" href="#src-trenton" aria-label="Source 14">[14]</a></sup></p><blockquote>&ldquo;Providence seemed to have smiled upon every part of this enterprise.&rdquo;<cite>Henry Knox, letter to his wife<sup><a class="cite" href="#src-knox" aria-label="Source 5">[5]</a></sup></cite></blockquote></section></div><div class="text"><h2>Side by side</h2></div><div class="table"><table>
+<tr><th scope="col"></th><th scope="col">Red Sea</th><th scope="col">Delaware</th></tr>
+<tr><th scope="row">Why cross?</th><td>To escape an army</td><td>To attack an army</td></tr>
+<tr><th scope="row">Weather</th><td>A strong east wind all night</td><td>Ice, rain and a northeaster</td></tr>
+<tr><th scope="row">How?</th><td>On dry ground between the waters</td><td>In boats and ferries</td></tr>
+<tr><th scope="row">Who is credited?</th><td>God</td><td>Soldiers and boatmen; Knox also thanked Providence</td></tr>
+<tr><th scope="row">Result</th><td>Israel is saved from Egypt</td><td>A victory that lifted a struggling cause</td></tr>
+</table></div>
+    <p class="bottom"><a href="#leaders">&larr; The Leaders</a> <a href="#home">Exhibit entrance</a> <a href="#journey">The Long Journey &rarr;</a></p>
+  </div>
+</article>
+<article class="page" id="journey">
+  <header><div class="wrap">
+    <a class="back" href="#home">&larr; Back to the exhibit entrance</a>
+    <p class="kicker">Gallery III</p>
+    <h1>The Long Journey</h1>
+    <p class="subtitle">Hardship, doubt and endurance on the way to freedom</p>
+  </div></header>
+  <div class="wrap">
+<div class="text"><p class="opening">Leaving was only the beginning. The Israelites, ancestors of the Jewish people, and the American revolutionaries both faced a long road on which many wanted to give up.</p></div><div class="text"><h2>Hardships</h2></div><div class="pair"><section class="panel"><p class="number">The Israelites</p><h2>Thirst and hunger</h2><p>In the wilderness the people lack water and food. God provides manna.</p><blockquote><span class="he" lang="he" dir="rtl">וַיִּלֹּנוּ הָעָם עַל-מֹשֶׁה לֵּאמֹר, מַה-נִּשְׁתֶּה.</span>And the people murmured against Moses, saying: &lsquo;What shall we drink?&rsquo;<cite><a href="#v-ex15_24">Shemot (Exodus) 15:24</a></cite></blockquote><blockquote><span class="he" lang="he" dir="rtl">…מִי-יִתֵּן מוּתֵנוּ בְיַד-יְהוָה בְּאֶרֶץ מִצְרַיִם, בְּשִׁבְתֵּנוּ עַל-סִיר הַבָּשָׂר…</span>&hellip;&lsquo;Would that we had died by the hand of the LORD in the land of Egypt, when we sat by the flesh-pots&hellip;&rsquo;<cite><a href="#v-ex16_3">Shemot (Exodus) 16:3</a></cite></blockquote><blockquote><span class="he" lang="he" dir="rtl">…לָמָּה זֶּה הֶעֱלִיתָנוּ מִמִּצְרַיִם, לְהָמִית אֹתִי וְאֶת-בָּנַי וְאֶת-מִקְנַי, בַּצָּמָא.</span>&hellip;&lsquo;Wherefore hast thou brought us up out of Egypt, to kill us and our children and our cattle with thirst?&rsquo;<cite><a href="#v-ex17_3">Shemot (Exodus) 17:3</a></cite></blockquote><blockquote><span class="he" lang="he" dir="rtl">וּבְנֵי יִשְׂרָאֵל, אָכְלוּ אֶת-הַמָּן אַרְבָּעִים שָׁנָה…</span>And the children of Israel did eat the manna forty years&hellip;<cite><a href="#v-ex16_35">Shemot (Exodus) 16:35</a></cite></blockquote></section><section class="panel"><p class="number">The Revolutionaries</p><h2>Defeat and retreat</h2><p>In August 1776 the army was beaten on Long Island and escaped by night across the East River.<sup><a class="cite" href="#src-brooklyn" aria-label="Source 15">[15]</a></sup> Later that year it retreated across New Jersey. Many soldiers&rsquo; terms of service were about to end.<sup><a class="cite" href="#src-retreat" aria-label="Source 16">[16]</a></sup></p><p>The war lasted until 1783. It included the hard winter at Valley Forge in 1777&ndash;78, and later years when unpaid soldiers deserted or threatened to stop serving.<sup><a class="cite" href="#src-army" aria-label="Source 11">[11]</a></sup></p></section></div><div class="text"><h2>Doubts</h2></div><div class="pair"><section class="panel"><p class="number">The Israelites</p><h2>Looking back to Egypt</h2><p>While Moses is on the mountain, the people ask for a golden calf. After the spies report on the land, some want to return to Egypt, and the people are told they will wander for forty years.</p><blockquote><span class="he" lang="he" dir="rtl">…קוּם עֲשֵׂה-לָנוּ אֱלֹהִים אֲשֶׁר יֵלְכוּ לְפָנֵינוּ…</span>&hellip;&lsquo;Up, make us a god who shall go before us&hellip;&rsquo;<cite><a href="#v-ex32_1">Shemot (Exodus) 32:1</a></cite></blockquote><blockquote><span class="he" lang="he" dir="rtl">וַיֹּאמְרוּ, אִישׁ אֶל-אָחִיו: נִתְּנָה רֹאשׁ, וְנָשׁוּבָה מִצְרָיְמָה.</span>And they said one to another: &lsquo;Let us make a captain, and let us return into Egypt.&rsquo;<cite><a href="#v-nu14_4">Bamidbar (Numbers) 14:4</a></cite></blockquote><blockquote><span class="he" lang="he" dir="rtl">וּבְנֵיכֶם יִהְיוּ רֹעִים בַּמִּדְבָּר, אַרְבָּעִים שָׁנָה…</span>And your children shall be wanderers in the wilderness forty years&hellip;<cite><a href="#v-nu14_33">Bamidbar (Numbers) 14:33</a></cite></blockquote></section><section class="panel"><p class="number">The Revolutionaries</p><h2>Close to collapse</h2><p>By December 1776, even Washington feared that the cause might fail unless a new army could be raised quickly.</p><blockquote>&ldquo;I think the game is pretty near up.&rdquo;<cite>Washington to his brother Samuel, December 18, 1776<sup><a class="cite" href="#src-samuel" aria-label="Source 7">[7]</a></sup></cite></blockquote></section></div><div class="text"><h2>Endurance</h2></div><div class="pair"><section class="panel"><p class="number">The Israelites</p><h2>Going on, and remembering</h2><p>The people continue until they reach the borders of Canaan. Jews still remember leaving Egypt each year at Pesach (Passover).</p><blockquote><span class="he" lang="he" dir="rtl">וְהָיָה הַיּוֹם הַזֶּה לָכֶם לְזִכָּרוֹן, וְחַגֹּתֶם אֹתוֹ חַג לַיהוָה…</span>And this day shall be unto you for a memorial, and ye shall keep it a feast to the LORD&hellip;<cite><a href="#v-ex12_14">Shemot (Exodus) 12:14</a></cite></blockquote></section><section class="panel"><p class="number">The Revolutionaries</p><h2>Staying in the fight</h2><p>Thomas Paine wrote to encourage Americans during this dark time.</p><blockquote>&ldquo;These are the times that try men&rsquo;s souls.&rdquo;<cite>Thomas Paine, <cite class="in">The American Crisis</cite>, 1776<sup><a class="cite" href="#src-paine" aria-label="Source 8">[8]</a></sup></cite></blockquote><p>At the end of December, soldiers whose time was ending were offered a ten-dollar bounty and asked to stay. At first no one stepped forward. Then more than 200 did, and others followed.<sup><a class="cite" href="#src-newyear" aria-label="Source 17">[17]</a></sup></p></section></div>
+    <p class="bottom"><a href="#crossing">&larr; The Crossing</a> <a href="#home">Exhibit entrance</a> <a href="#comparison-breaks">Where the Comparison Breaks &rarr;</a></p>
+  </div>
+</article>
+<article class="page" id="comparison-breaks">
+  <header><div class="wrap">
+    <a class="back" href="#home">&larr; Back to the exhibit entrance</a>
+    <p class="kicker">Gallery IV</p>
+    <h1>Where the Comparison Breaks</h1>
+    <p class="subtitle">A miracle and a covenant. Human politics and a constitution.</p>
+  </div></header>
+  <div class="wrap">
+<div class="text"><p class="opening">Both stories lead people toward freedom. They differ in who makes that freedom happen, and in what holds the people together afterward.</p></div><div class="pair"><section class="panel"><p class="number">The Exodus</p><h2>A miracle that leads to a covenant</h2><p>In the Torah, God is the one who frees the Israelites. He sends the plagues and splits the sea. Moses leads, but the power is not his. The road leads to Mount Sinai, where the people receive God&rsquo;s law and agree to a covenant (<i>brit</i>), a sacred and binding promise between them and God.</p><blockquote><span class="he" lang="he" dir="rtl">…כֹּל אֲשֶׁר-דִּבֶּר יְהוָה נַעֲשֶׂה…</span>&hellip;&lsquo;All that the LORD hath spoken we will do.&rsquo;&hellip;<cite><a href="#v-ex19_8">Shemot (Exodus) 19:8</a></cite></blockquote></section><section class="panel"><p class="number">The Revolution</p><h2>Human politics that leads to a constitution</h2><p>The Revolution was argued, voted on and fought by people. Congress debated, soldiers enlisted or went home, and generals made choices, some of them mistaken. The road led to the Constitution, signed in 1787<sup><a class="cite" href="#src-const" aria-label="Source 9">[9]</a></sup> and ratified in 1788,<sup><a class="cite" href="#src-ratify" aria-label="Source 18">[18]</a></sup> an agreement among people about how to govern themselves.</p><blockquote>&ldquo;We the People of the United States&hellip;&rdquo;<cite>Preamble to the Constitution<sup><a class="cite" href="#src-const" aria-label="Source 9">[9]</a></sup></cite></blockquote></section></div><div class="text"><h2>What the difference means</h2>
+<ul class="meaning">
+<li><strong>Where authority comes from</strong>At Sinai, the law has authority because God gives it. The people accept it, but they do not write it. The Constitution claims its authority from the people themselves.<sup><a class="cite" href="#src-const" aria-label="Source 9">[9]</a></sup></li>
+<li><strong>Whether the rules can change</strong>The Torah&rsquo;s commandments may be studied and interpreted, but they are not repealed by a public vote. The Constitution includes a way to amend it (Article V).<sup><a class="cite" href="#src-const" aria-label="Source 9">[9]</a></sup></li>
+<li><strong>What freedom is for</strong>In the Exodus, the Israelites are freed in order to serve God. Freedom comes with a calling. In the American story, independence lets people govern themselves.</li>
+<li><strong>Who is responsible</strong>A miracle asks people to trust and remember. Politics asks them to persuade, compromise and answer for the results.</li>
+</ul>
+<h2>A fair objection</h2>
+<p>The line is not perfectly sharp. Washington wrote that he relied on Providence, meaning God&rsquo;s care,<sup><a class="cite" href="#src-martha" aria-label="Source 4">[4]</a></sup> and one officer called the fog that helped the army escape from Long Island providential.<sup><a class="cite" href="#src-fog" aria-label="Source 6">[6]</a></sup> The Israelites also had to act: they had to leave, walk and agree.</p>
+<p>Still, the two kinds of story are different. The Torah presents God&rsquo;s action as the center of events. McCullough&rsquo;s <cite>1776</cite> is a history of people, their choices, courage and luck.<sup><a class="cite" href="#src-book" aria-label="Source 1">[1]</a></sup> It covers the start of the war, so the Constitution belongs to later history.</p></div>
+    <p class="bottom"><a href="#journey">&larr; The Long Journey</a> <a href="#home">Exhibit entrance</a> <a href="#game">The Game &rarr;</a></p>
+  </div>
+</article>
+<article class="page" id="game">
+  <header><div class="wrap">
+    <a class="back" href="#home">&larr; Back to the exhibit entrance</a>
+    <p class="kicker">Gallery V</p>
+    <h1>The Game</h1>
+    <p class="subtitle">Test what you learned in the galleries</p>
+  </div></header>
+  <div class="wrap">
+<div class="text"><p class="opening">Choose one answer for each question. You get one try per question.</p></div><div class="text"><noscript><p>The game needs JavaScript turned on.</p></noscript><section class="q"><p class="number">Question 1 of 8</p><h2>Who asked, &ldquo;Who am I, that I should go unto Pharaoh?&rdquo;</h2><div class="choices"><button type="button">Aaron</button><button type="button" data-right>Moses</button><button type="button">Yitro</button></div><p class="answer" aria-live="polite" data-why="Moses asks this in Shemot 3:11."></p></section><section class="q"><p class="number">Question 2 of 8</p><h2>Who wrote that he had tried to avoid being appointed commander?</h2><div class="choices"><button type="button" data-right>George Washington</button><button type="button">Thomas Paine</button><button type="button">Henry Knox</button></div><p class="answer" aria-live="polite" data-why="Washington wrote this to Martha in June 1775."></p></section><section class="q"><p class="number">Question 3 of 8</p><h2>What drove back the sea all night?</h2><div class="choices"><button type="button">A great rain</button><button type="button">An earthquake</button><button type="button" data-right>A strong east wind</button></div><p class="answer" aria-live="polite" data-why="Shemot 14:21."></p></section><section class="q"><p class="number">Question 4 of 8</p><h2>When did Washington&rsquo;s army cross the Delaware?</h2><div class="choices"><button type="button">July 4, 1776</button><button type="button" data-right>Christmas night, 1776</button><button type="button">December 23, 1783</button></div><p class="answer" aria-live="polite" data-why="The crossing led to the attack on Trenton."></p></section><section class="q"><p class="number">Question 5 of 8</p><h2>What did the people ask for at the waters of Marah?</h2><div class="choices"><button type="button" data-right>Something to drink</button><button type="button">A king</button><button type="button">New sandals</button></div><p class="answer" aria-live="polite" data-why="&ldquo;What shall we drink?&rdquo; (Shemot 15:24)."></p></section><section class="q"><p class="number">Question 6 of 8</p><h2>Who wrote, &ldquo;These are the times that try men&rsquo;s souls&rdquo;?</h2><div class="choices"><button type="button">Benjamin Tallmadge</button><button type="button">George Washington</button><button type="button" data-right>Thomas Paine</button></div><p class="answer" aria-live="polite" data-why="It opens The American Crisis."></p></section><section class="q"><p class="number">Question 7 of 8</p><h2>What helped part of Washington&rsquo;s army escape from Long Island?</h2><div class="choices"><button type="button" data-right>A thick fog</button><button type="button">A bridge</button><button type="button">A peace treaty</button></div><p class="answer" aria-live="polite" data-why="Benjamin Tallmadge described the fog."></p></section><section class="q"><p class="number">Question 8 of 8</p><h2>Where does the Exodus road lead in this exhibit?</h2><div class="choices"><button type="button">To a constitution</button><button type="button" data-right>To a covenant</button><button type="button">To a treaty</button></div><p class="answer" aria-live="polite" data-why="At Sinai the people accept the covenant (Shemot 19:8)."></p></section><p id="score" role="status">Score: 0 of 8</p><p class="center"><button type="button" id="again">Play again</button></p></div>
+    <p class="bottom"><a href="#comparison-breaks">&larr; Where the Comparison Breaks</a> <a href="#home">Exhibit entrance</a> <a href="#sources">Sources &rarr;</a></p>
+  </div>
+</article>
+<article class="page" id="sources">
+  <header><div class="wrap">
+    <a class="back" href="#home">&larr; Back to the exhibit entrance</a>
+    <p class="kicker">Gallery VI</p>
+    <h1>Sources</h1>
+    <p class="subtitle">The pesukim, books, documents and websites behind this exhibit</p>
+  </div></header>
+  <div class="wrap">
+<div class="text"><p>After following a source number, use your browser&rsquo;s Back button to return to your place.</p>
+<h2>Pesukim from the Torah</h2>
+<p>Hebrew text and English translation (Jewish Publication Society, 1917) from Mechon-Mamre.<sup><a class="cite" href="#src-jps" aria-label="Source 2">[2]</a></sup> Each reference links to its chapter.</p>
+<ul class="list"><li id="v-ex3_11"><a href="https://mechon-mamre.org/p/pt/pt0203.htm">Shemot (Exodus) 3:11</a><span class="he" lang="he" dir="rtl">וַיֹּאמֶר מֹשֶׁה, אֶל-הָאֱלֹהִים, מִי אָנֹכִי, כִּי אֵלֵךְ אֶל-פַּרְעֹה; וְכִי אוֹצִיא אֶת-בְּנֵי יִשְׂרָאֵל, מִמִּצְרָיִם.</span>And Moses said unto God: &lsquo;Who am I, that I should go unto Pharaoh, and that I should bring forth the children of Israel out of Egypt?&rsquo;</li><li id="v-ex4_10"><a href="https://mechon-mamre.org/p/pt/pt0204.htm">Shemot (Exodus) 4:10</a><span class="he" lang="he" dir="rtl">וַיֹּאמֶר מֹשֶׁה אֶל-יְהוָה, בִּי אֲדֹנָי, לֹא אִישׁ דְּבָרִים אָנֹכִי…</span>And Moses said unto the LORD: &lsquo;Oh Lord, I am not a man of words&hellip;&rsquo;</li><li id="v-ex4_13"><a href="https://mechon-mamre.org/p/pt/pt0204.htm">Shemot (Exodus) 4:13</a><span class="he" lang="he" dir="rtl">וַיֹּאמֶר, בִּי אֲדֹנָי; שְׁלַח-נָא, בְּיַד-תִּשְׁלָח.</span>And he said: &lsquo;Oh Lord, send, I pray Thee, by the hand of him whom Thou wilt send.&rsquo;</li><li id="v-ex12_14"><a href="https://mechon-mamre.org/p/pt/pt0212.htm">Shemot (Exodus) 12:14</a><span class="he" lang="he" dir="rtl">וְהָיָה הַיּוֹם הַזֶּה לָכֶם לְזִכָּרוֹן, וְחַגֹּתֶם אֹתוֹ חַג לַיהוָה…</span>And this day shall be unto you for a memorial, and ye shall keep it a feast to the LORD&hellip;</li><li id="v-ex14_13"><a href="https://mechon-mamre.org/p/pt/pt0214.htm">Shemot (Exodus) 14:13</a><span class="he" lang="he" dir="rtl">וַיֹּאמֶר מֹשֶׁה אֶל-הָעָם, אַל-תִּירָאוּ--הִתְיַצְּבוּ וּרְאוּ אֶת-יְשׁוּעַת יְהוָה…</span>And Moses said unto the people: &lsquo;Fear ye not, stand still, and see the salvation of the LORD&hellip;&rsquo;</li><li id="v-ex14_21"><a href="https://mechon-mamre.org/p/pt/pt0214.htm">Shemot (Exodus) 14:21</a><span class="he" lang="he" dir="rtl">וַיֵּט מֹשֶׁה אֶת-יָדוֹ, עַל-הַיָּם, וַיּוֹלֶךְ יְהוָה אֶת-הַיָּם בְּרוּחַ קָדִים עַזָּה כָּל-הַלַּיְלָה, וַיָּשֶׂם אֶת-הַיָּם לֶחָרָבָה; וַיִּבָּקְעוּ, הַמָּיִם.</span>And Moses stretched out his hand over the sea; and the LORD caused the sea to go back by a strong east wind all the night, and made the sea dry land, and the waters were divided.</li><li id="v-ex14_22"><a href="https://mechon-mamre.org/p/pt/pt0214.htm">Shemot (Exodus) 14:22</a><span class="he" lang="he" dir="rtl">וַיָּבֹאוּ בְנֵי-יִשְׂרָאֵל בְּתוֹךְ הַיָּם, בַּיַּבָּשָׁה; וְהַמַּיִם לָהֶם חוֹמָה, מִימִינָם וּמִשְּׂמֹאלָם.</span>And the children of Israel went into the midst of the sea upon the dry ground; and the waters were a wall unto them on their right hand, and on their left.</li><li id="v-ex15_24"><a href="https://mechon-mamre.org/p/pt/pt0215.htm">Shemot (Exodus) 15:24</a><span class="he" lang="he" dir="rtl">וַיִּלֹּנוּ הָעָם עַל-מֹשֶׁה לֵּאמֹר, מַה-נִּשְׁתֶּה.</span>And the people murmured against Moses, saying: &lsquo;What shall we drink?&rsquo;</li><li id="v-ex16_3"><a href="https://mechon-mamre.org/p/pt/pt0216.htm">Shemot (Exodus) 16:3</a><span class="he" lang="he" dir="rtl">…מִי-יִתֵּן מוּתֵנוּ בְיַד-יְהוָה בְּאֶרֶץ מִצְרַיִם, בְּשִׁבְתֵּנוּ עַל-סִיר הַבָּשָׂר…</span>&hellip;&lsquo;Would that we had died by the hand of the LORD in the land of Egypt, when we sat by the flesh-pots&hellip;&rsquo;</li><li id="v-ex16_35"><a href="https://mechon-mamre.org/p/pt/pt0216.htm">Shemot (Exodus) 16:35</a><span class="he" lang="he" dir="rtl">וּבְנֵי יִשְׂרָאֵל, אָכְלוּ אֶת-הַמָּן אַרְבָּעִים שָׁנָה…</span>And the children of Israel did eat the manna forty years&hellip;</li><li id="v-ex17_3"><a href="https://mechon-mamre.org/p/pt/pt0217.htm">Shemot (Exodus) 17:3</a><span class="he" lang="he" dir="rtl">…לָמָּה זֶּה הֶעֱלִיתָנוּ מִמִּצְרַיִם, לְהָמִית אֹתִי וְאֶת-בָּנַי וְאֶת-מִקְנַי, בַּצָּמָא.</span>&hellip;&lsquo;Wherefore hast thou brought us up out of Egypt, to kill us and our children and our cattle with thirst?&rsquo;</li><li id="v-ex18_18"><a href="https://mechon-mamre.org/p/pt/pt0218.htm">Shemot (Exodus) 18:18</a><span class="he" lang="he" dir="rtl">נָבֹל תִּבֹּל--גַּם-אַתָּה, גַּם-הָעָם הַזֶּה אֲשֶׁר עִמָּךְ: כִּי-כָבֵד מִמְּךָ הַדָּבָר, לֹא-תוּכַל עֲשֹׂהוּ לְבַדֶּךָ.</span>Thou wilt surely wear away, both thou, and this people that is with thee; for the thing is too heavy for thee; thou art not able to perform it thyself alone.</li><li id="v-ex19_8"><a href="https://mechon-mamre.org/p/pt/pt0219.htm">Shemot (Exodus) 19:8</a><span class="he" lang="he" dir="rtl">…כֹּל אֲשֶׁר-דִּבֶּר יְהוָה נַעֲשֶׂה…</span>&hellip;&lsquo;All that the LORD hath spoken we will do.&rsquo;&hellip;</li><li id="v-ex32_1"><a href="https://mechon-mamre.org/p/pt/pt0232.htm">Shemot (Exodus) 32:1</a><span class="he" lang="he" dir="rtl">…קוּם עֲשֵׂה-לָנוּ אֱלֹהִים אֲשֶׁר יֵלְכוּ לְפָנֵינוּ…</span>&hellip;&lsquo;Up, make us a god who shall go before us&hellip;&rsquo;</li><li id="v-nu12_3"><a href="https://mechon-mamre.org/p/pt/pt0412.htm">Bamidbar (Numbers) 12:3</a><span class="he" lang="he" dir="rtl">וְהָאִישׁ מֹשֶׁה, עָנָו מְאֹד--מִכֹּל, הָאָדָם, אֲשֶׁר, עַל-פְּנֵי הָאֲדָמָה.</span>Now the man Moses was very meek, above all the men that were upon the face of the earth.</li><li id="v-nu14_4"><a href="https://mechon-mamre.org/p/pt/pt0414.htm">Bamidbar (Numbers) 14:4</a><span class="he" lang="he" dir="rtl">וַיֹּאמְרוּ, אִישׁ אֶל-אָחִיו: נִתְּנָה רֹאשׁ, וְנָשׁוּבָה מִצְרָיְמָה.</span>And they said one to another: &lsquo;Let us make a captain, and let us return into Egypt.&rsquo;</li><li id="v-nu14_33"><a href="https://mechon-mamre.org/p/pt/pt0414.htm">Bamidbar (Numbers) 14:33</a><span class="he" lang="he" dir="rtl">וּבְנֵיכֶם יִהְיוּ רֹעִים בַּמִּדְבָּר, אַרְבָּעִים שָׁנָה…</span>And your children shall be wanderers in the wilderness forty years&hellip;</li><li id="v-dt34_10"><a href="https://mechon-mamre.org/p/pt/pt0534.htm">Devarim (Deuteronomy) 34:10</a><span class="he" lang="he" dir="rtl">וְלֹא-קָם נָבִיא עוֹד בְּיִשְׂרָאֵל, כְּמֹשֶׁה, אֲשֶׁר יְדָעוֹ יְהוָה, פָּנִים אֶל-פָּנִים.</span>And there hath not arisen a prophet since in Israel like unto Moses, whom the LORD knew face to face;</li></ul>
+<p>Also referred to by chapter and verse: Shemot (Exodus) 4:14&ndash;16 and 14:26&ndash;28.</p>
+<h2>Books and texts</h2><ol class="list"><li id="src-book" value="1">David McCullough, <cite>1776</cite> (New York: Simon &amp; Schuster, 2005). <a class="url" href="https://www.simonandschuster.com/books/1776/David-McCullough/9780743287708">https://www.simonandschuster.com/books/1776/David-McCullough/9780743287708</a></li><li id="src-jps" value="2"><cite>The Holy Scriptures</cite>, Jewish Publication Society, 1917, with Hebrew text. Mechon-Mamre. <a class="url" href="https://mechon-mamre.org/p/pt/pt0.htm">https://mechon-mamre.org/p/pt/pt0.htm</a></li></ol>
+<h2>Letters, speeches and founding documents</h2><ol class="list"><li id="src-address" value="3">George Washington, Address to the Continental Congress, June 16, 1775. Founders Online. <a class="url" href="https://founders.archives.gov/documents/Washington/03-01-02-0001">https://founders.archives.gov/documents/Washington/03-01-02-0001</a></li><li id="src-martha" value="4">George Washington to Martha Washington, June 18, 1775. Founders Online. <a class="url" href="https://founders.archives.gov/documents/Washington/03-01-02-0003">https://founders.archives.gov/documents/Washington/03-01-02-0003</a></li><li id="src-knox" value="5">Henry Knox, letter to his wife about the crossing, December 1776. Teaching American History. <a class="url" href="https://teachingamericanhistory.org/document/henry-knox-to-his-wife/">https://teachingamericanhistory.org/document/henry-knox-to-his-wife/</a></li><li id="src-fog" value="6">Benjamin Tallmadge on the fog at Long Island, from his <cite>Memoir</cite> (1858). American Battlefield Trust. <a class="url" href="https://www.battlefields.org/learn/primary-sources/1776-fog-saved-part-our-army-being-captured">https://www.battlefields.org/learn/primary-sources/1776-fog-saved-part-our-army-being-captured</a></li><li id="src-samuel" value="7">George Washington to Samuel Washington, December 18, 1776. Founders Online. <a class="url" href="https://founders.archives.gov/documents/Washington/03-07-02-0299">https://founders.archives.gov/documents/Washington/03-07-02-0299</a></li><li id="src-paine" value="8">Thomas Paine, <cite>The American Crisis</cite>, No. 1 (1776). American Battlefield Trust. <a class="url" href="https://www.battlefields.org/learn/primary-sources/american-crisis">https://www.battlefields.org/learn/primary-sources/american-crisis</a></li><li id="src-const" value="9">National Archives, &ldquo;The Constitution of the United States: A Transcription.&rdquo; <a class="url" href="https://www.archives.gov/founding-docs/constitution-transcript">https://www.archives.gov/founding-docs/constitution-transcript</a></li></ol>
+<h2>History websites</h2><ol class="list"><li id="src-yam" value="10">Logos, article on the Red Sea and the Hebrew name <i>Yam Suf</i>. <a class="url" href="https://www.logos.com/grow/red-sea-lost-at-sea/">https://www.logos.com/grow/red-sea-lost-at-sea/</a></li><li id="src-army" value="11">George Washington&rsquo;s Mount Vernon, &ldquo;Continental Army.&rdquo; <a class="url" href="https://mountvernon.org/digital-encyclopedia/article/continental-army">https://mountvernon.org/digital-encyclopedia/article/continental-army</a></li><li id="src-resign" value="12">George Washington&rsquo;s Mount Vernon, &ldquo;Resignation of Military Commission.&rdquo; <a class="url" href="https://edit.mountvernon.org/digital-encyclopedia/article/resignation-of-military-commission">https://edit.mountvernon.org/digital-encyclopedia/article/resignation-of-military-commission</a></li><li id="src-cross" value="13">George Washington&rsquo;s Mount Vernon, &ldquo;10 Facts About Washington&rsquo;s Crossing of the Delaware River.&rdquo; <a class="url" href="https://mountvernon.org/george-washington/the-revolutionary-war/the-trenton-princeton-campaign/10-facts-about-washingtons-crossing-of-the-delaware-river">https://mountvernon.org/george-washington/the-revolutionary-war/the-trenton-princeton-campaign/10-facts-about-washingtons-crossing-of-the-delaware-river</a></li><li id="src-trenton" value="14">American Battlefield Trust, &ldquo;Battle of Trenton.&rdquo; <a class="url" href="https://www.battlefields.org/learn/revolutionary-war/battles/trenton">https://www.battlefields.org/learn/revolutionary-war/battles/trenton</a></li><li id="src-brooklyn" value="15">George Washington&rsquo;s Mount Vernon, &ldquo;Battle of Long Island.&rdquo; <a class="url" href="https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-long-island/">https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-long-island/</a></li><li id="src-retreat" value="16">American Battlefield Trust, &ldquo;The Ten Crucial Days: The Path to Trenton.&rdquo; <a class="url" href="https://www.battlefields.org/learn/articles/ten-crucial-days-path-trenton">https://www.battlefields.org/learn/articles/ten-crucial-days-path-trenton</a></li><li id="src-newyear" value="17">Emerging Revolutionary War Era, &ldquo;New Year&rsquo;s Eve, 1776: &lsquo;Your country is at stake.&rsquo;&rdquo; <a class="url" href="https://emergingrevolutionarywar.org/2017/12/31/new-years-eve-1776-your-country-is-at-stake/">https://emergingrevolutionarywar.org/2017/12/31/new-years-eve-1776-your-country-is-at-stake/</a></li><li id="src-ratify" value="18">National Archives, Prologue blog, &ldquo;The Real Constitution Day?&rdquo; <a class="url" href="https://prologue.blogs.archives.gov/2013/06/21/the-real-constitution-day/">https://prologue.blogs.archives.gov/2013/06/21/the-real-constitution-day/</a></li></ol></div>
+    <p class="bottom"><a href="#game">&larr; The Game</a> <a href="#home">Exhibit entrance</a></p>
   </div>
 </article>
 
@@ -312,21 +395,21 @@
     <h2>Explore the Exhibit</h2>
     <ul>
       <li>
-        <a href="leaders.html">
+        <a href="#leaders">
           <span class="number">Gallery I</span>
           <span class="name">The Leaders</span>
           <span class="desc">George Washington and Moses.</span>
         </a>
       </li>
       <li>
-        <a href="crossing.html">
+        <a href="#crossing">
           <span class="number">Gallery II</span>
           <span class="name">The Crossing</span>
           <span class="desc">The Delaware River and the Red Sea.</span>
         </a>
       </li>
       <li>
-        <a href="journey.html">
+        <a href="#journey">
           <span class="number">Gallery III</span>
           <span class="name">The Long Journey</span>
           <span class="desc">Hardship, doubt and endurance on the way to freedom.</span>
@@ -340,17 +423,17 @@
         </a>
       </li>
       <li>
-        <a href="game.html">
+        <a href="#game">
           <span class="number">Gallery V</span>
           <span class="name">The Game</span>
           <span class="desc">Test what you have learned.</span>
         </a>
       </li>
       <li>
-        <a href="sources.html">
+        <a href="#sources">
           <span class="number">Gallery VI</span>
           <span class="name">Sources</span>
-          <span class="desc">The books and texts behind this exhibit.</span>
+          <span class="desc">The pesukim, books and documents behind this exhibit.</span>
         </a>
       </li>
     </ul>
@@ -363,5 +446,38 @@
   <div class="wrap">Two Roads to Freedom &middot; A school project</div>
 </footer>
 
+<script>
+(function () {
+  var qs = document.querySelectorAll('.q'), score = 0;
+  var out = document.getElementById('score');
+  function show() { out.textContent = 'Score: ' + score + ' of ' + qs.length; }
+  qs.forEach(function (q) {
+    var buttons = q.querySelectorAll('button'), answer = q.querySelector('.answer');
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var ok = b.hasAttribute('data-right');
+        buttons.forEach(function (x) {
+          x.disabled = true;
+          if (x.hasAttribute('data-right')) { x.className = 'right'; x.textContent += ' \u2713'; }
+        });
+        if (ok) { score++; } else { b.className = 'wrong'; b.textContent += ' \u2717'; }
+        answer.innerHTML = (ok ? 'Correct. ' : 'Not quite. ') + answer.getAttribute('data-why');
+        show();
+      });
+    });
+  });
+  document.getElementById('again').addEventListener('click', function () {
+    score = 0;
+    qs.forEach(function (q) {
+      q.querySelectorAll('button').forEach(function (x) {
+        x.disabled = false; x.className = ''; x.textContent = x.textContent.replace(/ [\u2713\u2717]$/, '');
+      });
+      q.querySelector('.answer').textContent = '';
+    });
+    show();
+    window.scrollTo(0, 0);
+  });
+})();
+</script>
 </body>
 </html>
